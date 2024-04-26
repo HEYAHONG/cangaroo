@@ -44,6 +44,14 @@
 #include <netlink/route/link.h>
 #include <netlink/route/link/can.h>
 
+#ifndef SIOCGSTAMPNS
+#define SIOCGSTAMPNS SIOCGSTAMPNS_OLD
+#endif
+
+#ifndef SIOCGSTAMP
+#define SIOCGSTAMP SIOCGSTAMP_OLD
+#endif
+
 SocketCanInterface::SocketCanInterface(SocketCanDriver *driver, int index, QString name)
   : CanInterface((CanDriver *)driver),
 	_idx(index),
